@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  config:
+    # "configserver" 라는 부분이 spring config server 띄워놓은 것을 사용할 것이고 뒤에 나오는 URL이 그 주소라는 뜻이었다.
+    import: "configserver:http://localhost:8081"
+    # import: "optional:configserver:http://localhost:8081/"
+  cloud:
+    config:
+      name: database
+      profile: dev
+
+encrypt:
+  key: my-random-key-value
